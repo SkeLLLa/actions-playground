@@ -34,4 +34,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          test-command: 'npm run unit -- --coverage'
+          test-command: 'npm run unit'
+          coverage-comment: true
