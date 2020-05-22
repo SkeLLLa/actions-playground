@@ -42,6 +42,7 @@
     "eslint-plugin-sort-requires": "^2.1.0",
     "husky": "^4.2.5",
     "jest": "^26.0.0",
+    "jest-junit": "^10.0.0",
     "prettier": "^2.0.5",
     "prettier-plugin-packagejson": "^2.2.3",
     "pretty-quick": "^2.0.1",

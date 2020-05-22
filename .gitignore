@@ -5,7 +5,6 @@ logs
 *.log
 npm-debug.log*
 **/*.xxx.js
-.npm
 .DS_Store
-static/*
-!static/.*
+test-results/
+junit.*

@@ -29,7 +29,15 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-review
-      - name: Test & Coverage
+      - name: Test
+        run: npm run unit --if-present
+      - name: Test results
+        uses: IgnusG/jest-report-action@v2
+        if: always()
+        with:
+          access-token: ${{ secrets.GITHUB_TOKEN }}
+          check-name: test-check
+      - name: Coverage
         uses: mattallty/jest-github-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
