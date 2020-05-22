@@ -29,7 +29,7 @@ jobs:
       - name: Test
         run: npm run unit --if-present -- --coverage
       - name: Test results
-        uses: IgnusG/jest-report-action@v2
+        uses: IgnusG/jest-report-action@v2.3.1
         if: always()
         with:
           access-token: ${{ secrets.GITHUB_TOKEN }}
