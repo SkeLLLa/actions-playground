@@ -67,25 +67,24 @@ jobs:
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-
-  publish-gh:
-    name: Publish to github packages
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 14
-          registry-url: https://npm.pkg.github.com/
-      - name: Install dependencies
-        run: npm ci
-      - name: Build
-        run: npm run build --if-present
-      - name: Get npm tag
-        id: npm_tag
-        run: |
-          NPM_TAG=$([[ ${{ github.ref }} == *"-rc"* ]] && echo "next" || echo "latest")
-          echo "::set-output name=tag::$NPM_TAG"
-      - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  # publish-gh:
+  #   name: Publish to github packages
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 14
+  #         registry-url: https://npm.pkg.github.com/
+  #     - name: Install dependencies
+  #       run: npm ci
+  #     - name: Build
+  #       run: npm run build --if-present
+  #     - name: Get npm tag
+  #       id: npm_tag
+  #       run: |
+  #         NPM_TAG=$([[ ${{ github.ref }} == *"-rc"* ]] && echo "next" || echo "latest")
+  #         echo "::set-output name=tag::$NPM_TAG"
+  #     - run: npm publish --access public
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
