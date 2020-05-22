@@ -9,4 +9,13 @@ module.exports = {
   bracketSpacing: true,
   endOfLine: 'lf',
   printWidth: 80,
+  overrides: [
+    {
+      files: '**/*.json',
+      options: {
+        trailingComma: 'none',
+        singleQuote: false,
+      },
+    },
+  ],
 };
