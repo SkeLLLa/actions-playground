@@ -27,7 +27,7 @@ jobs:
       - name: Lint
         run: npm run lint --if-present
       - name: Test & Coverage
-        uses: mattallty/jest-github-action@v1.0.2
+        uses: mattallty/jest-github-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
