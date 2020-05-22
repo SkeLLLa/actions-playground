@@ -28,9 +28,9 @@ jobs:
         run: npm run lint --if-present
       - name: Test
         run: npm run unit --if-present -- --coverage
-      - name: Test results
-        uses: IgnusG/jest-report-action@v2.3.1
-        if: always()
+      - name: Archive code coverage results
+        if: matrix.node-version == '14.x'
+        uses: actions/upload-artifact@v1
         with:
-          access-token: ${{ secrets.GITHUB_TOKEN }}
-          check-name: test-check
+          name: code-coverage-report
+          path: coverage
