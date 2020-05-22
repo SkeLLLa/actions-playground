@@ -3,11 +3,6 @@ name: Verify
 on:
   push:
     branches: [master]
-  pull_request:
-    branches: [master]
-  create:
-    tags:
-      - '^v\d+\.\d+\.\d+(-rc.\d+|)'
 
 jobs:
   build:
@@ -27,5 +22,13 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build --if-present
-      - name: Test
-        run: npm test
+      - name: Audit
+        run: npm audit --production
+      - name: Lint
+        run: npm run lint --if-present
+      - name: Test & Coverage
+        uses: mattallty/jest-github-action@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          test-command: 'npm run unit -- --coverage'
