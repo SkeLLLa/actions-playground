@@ -26,9 +26,5 @@ jobs:
         run: npm audit --production
       - name: Lint
         run: npm run lint --if-present
-      - name: Test & Coverage
-        uses: mattallty/jest-github-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          test-command: 'npm run unit'
+      - name: Test
+        run: npm run unit --if-present -- --coverage
