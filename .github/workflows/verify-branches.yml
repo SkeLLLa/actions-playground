@@ -3,6 +3,11 @@ name: Verify
 on:
   push:
     branches: [master]
+    paths-ignore:
+      - VERSION
+    tags-ignore:
+      - v[0-9]+.[0-9]+.[0-9]+
+      - v[0-9]+.[0-9]+.[0-9]+-rc.[0-9]+
 
 jobs:
   build:
