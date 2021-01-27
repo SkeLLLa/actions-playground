@@ -2,18 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [1.3.0](https://github.com/SkeLLLa/actions-playground/compare/v1.2.3-rc.0...v1.3.0) (2021-01-27)
-
-
-### Features
-
-* up ([45ed7e4](https://github.com/SkeLLLa/actions-playground/commit/45ed7e4ed46505d8c053bf71da2a78135464ae56))
-
+### [1.3.1](https://github.com/SkeLLLa/actions-playground/compare/v1.3.0...v1.3.1) (2021-01-27)
 
 ### Misc
 
-* version file ([a41944b](https://github.com/SkeLLLa/actions-playground/commit/a41944bf00f1e9fb5b6ffebaf8070dee53063bf2))
-* **deps-dev:** bump standard-version from 8.0.0 to 8.0.1 ([53727b9](https://github.com/SkeLLLa/actions-playground/commit/53727b9b1f1f3037a7c6fd3c35568b714d7fbef2))
+- xxx ([db62614](https://github.com/SkeLLLa/actions-playground/commit/db626142b59fed5e4be7b02a409745a7479bf6d9))
+
+## [1.3.0](https://github.com/SkeLLLa/actions-playground/compare/v1.2.3-rc.0...v1.3.0) (2021-01-27)
+
+### Features
+
+- up ([45ed7e4](https://github.com/SkeLLLa/actions-playground/commit/45ed7e4ed46505d8c053bf71da2a78135464ae56))
+
+### Misc
+
+- version file ([a41944b](https://github.com/SkeLLLa/actions-playground/commit/a41944bf00f1e9fb5b6ffebaf8070dee53063bf2))
+- **deps-dev:** bump standard-version from 8.0.0 to 8.0.1 ([53727b9](https://github.com/SkeLLLa/actions-playground/commit/53727b9b1f1f3037a7c6fd3c35568b714d7fbef2))
 
 ### [1.2.3-rc.0](https://github.com/SkeLLLa/actions-playground/compare/v1.2.2...v1.2.3-rc.0) (2020-08-15)
 
