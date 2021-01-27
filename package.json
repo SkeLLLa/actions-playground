@@ -21,7 +21,7 @@
     "release": "git add -A && standard-version -a",
     "test": "npm audit --production && npm run lint && npm run unit",
     "unit": "jest",
-    "version:update": "echo $npm_package_version > VERSION && echo $npm_package_version >> README.md"
+    "version:update": "echo $npm_package_version > VERSION"
   },
   "husky": {
     "hooks": {
