@@ -1,0 +1,29 @@
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - 'VERSION'
+
+name: Auto version
+
+jobs:
+  release:
+    name: Auto version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - name: Install dependencies
+        run: npm ci
+      - name: bump version
+        run: npm run version:update
+      - name: Commit version changes
+        run: |
+          git config --global user.name 'Release Bot'
+          git config --global user.email '2273103+SkeLLLa@users.noreply.github.com'
+          npm run release
