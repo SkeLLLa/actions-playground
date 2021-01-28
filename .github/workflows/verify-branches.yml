@@ -64,7 +64,7 @@ jobs:
           git config --global user.email '2273103+SkeLLLa@users.noreply.github.com'
           RELEASE_VERSION=`cat VERSION`
           echo "$RELEASE_VERSION"
-          [[ $RELEASE_VERSION == *"-rc"* ]] && npm run release -- --prerelease rc || npm run release
+          [[ ${{ github.ref }} == "refs/heads/master" ]] && npm run release || npm run release -- --prerelease rc
   # release:
   #   name: Create release
   #   needs: bump-version
