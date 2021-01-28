@@ -62,6 +62,7 @@ jobs:
           npm run release
   release:
     name: Create release
+    needs: bump-version
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
