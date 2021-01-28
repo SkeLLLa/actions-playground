@@ -10,3 +10,6 @@ chore 3
 breaking
 breaking 2
 qweqwe
+feat a
+fix b
+chore c
