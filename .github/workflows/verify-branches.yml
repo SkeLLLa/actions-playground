@@ -59,13 +59,13 @@ jobs:
       - name: Update version file
         run: npm run version:update
       - name: Commit version changes
-        if: github.ref == "refs/heads/master"
+        if: ${{ github.ref == 'refs/heads/master' }}
         run: |
           git config --global user.name 'Release Bot'
           git config --global user.email '2273103+SkeLLLa@users.noreply.github.com'
           npm run release
       - name: Commit version changes
-        if: github.ref == "refs/heads/next"
+        if: ${{ github.ref == 'refs/heads/next' }}
         run: |
           git config --global user.name 'Release Bot'
           git config --global user.email '2273103+SkeLLLa@users.noreply.github.com'
