@@ -7,7 +7,7 @@ on:
     branches:
       - next
 
-name: Create Release
+name: Create Beta Release
 
 jobs:
   release:
