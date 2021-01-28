@@ -3,3 +3,4 @@ foo
 test
 foo
 bar
+next test
