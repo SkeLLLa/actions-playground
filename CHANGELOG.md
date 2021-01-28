@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/SkeLLLa/actions-playground/compare/v1.6.1...v1.7.0) (2021-01-28)
+
+
+### Features
+
+* next ([388168b](https://github.com/SkeLLLa/actions-playground/commit/388168bc3e470d5c6bebbd8bc8b1f505f7e16cac))
+
 ### [1.6.1](https://github.com/SkeLLLa/actions-playground/compare/v1.6.0...v1.6.1) (2021-01-28)
 
 ## [1.6.0](https://github.com/SkeLLLa/actions-playground/compare/v1.4.2...v1.6.0) (2021-01-28)
