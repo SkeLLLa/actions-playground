@@ -62,7 +62,8 @@ jobs:
         run: |
           git config --global user.name 'Release Bot'
           git config --global user.email '2273103+SkeLLLa@users.noreply.github.com'
-          npm run release
+          RELEASE_VERSION=`cat VERSION`
+          [[ $RELEASE_VERSION == *"-rc"* ]] && npm run release -- --prerelease rc || npm run release
   # release:
   #   name: Create release
   #   needs: bump-version

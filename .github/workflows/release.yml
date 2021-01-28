@@ -84,7 +84,8 @@ jobs:
       - name: Get npm tag
         id: npm_tag
         run: |
-          NPM_TAG=$([[ ${{ github.ref }} == *"-rc"* ]] && echo "next" || echo "latest")
+          RELEASE_VERSION=`cat VERSION`
+          NPM_TAG=$([[ $RELEASE_VERSION == *"-rc"* ]] && echo "next" || echo "latest")
           echo "::set-output name=tag::$NPM_TAG"
       - name: Publish
         run: npm publish --tag ${{ steps.npm_tag.outputs.tag }}
