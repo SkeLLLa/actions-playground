@@ -1,8 +1,3 @@
-# on:
-#   create:
-#     tags:
-#       - v[0-9]+.[0-9]+.[0-9]+
-#       - v[0-9]+.[0-9]+.[0-9]+-rc.[0-9]+
 on:
   workflow_run:
     workflows:
@@ -11,20 +6,19 @@ on:
       - completed
     branches:
       - master
-      - next
 
 name: Create Release
 
 jobs:
   release:
-    # name: Create release
+    name: Release stable
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.ref }}
       - name: Checkout code
         uses: actions/checkout@v2
         with:
           fetch-depth: 50
+          ref:
       - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       - run: git fetch --prune --unshallow
       - name: Setup node
@@ -33,28 +27,20 @@ jobs:
           node-version: 14
       - name: Install dependencies
         run: npm ci
-      - run: npm run get-changelog | tail -n +2
       - name: Get latest changelog
         id: Changelog
         run: |
-          changelog=$(npm run --silent get-changelog | tail -n +2)
+          changelog=$(npm run --silent get-changelog -- --skipUnstable | tail -n +2)
           echo $changelog
           changelog="${changelog//'%'/'%25'}"
           changelog="${changelog//$'\n'/'%0A'}"
           changelog="${changelog//$'\r'/'%0D'}"
           echo "::set-output name=changelog::$changelog"
-      # - name: Get version
-      #   id: release_version
-      #   run: |
-      #     RELEASE_VERSION = `cat VERSION`
-      #     echo "::set-output name=version::$RELEASE_VERSION"
-      - name: Get release type
+      - name: Get release version
         id: release_type
         run: |
           RELEASE_VERSION=`cat VERSION`
-          PRERELEASE=$([[ $RELEASE_VERSION == *"-rc"* ]] && echo true || echo false)
           echo "::set-output name=version::$RELEASE_VERSION"
-          echo "::set-output name=prerelease::$PRERELEASE"
       - name: Create github release
         id: create_release
         uses: actions/create-release@latest
@@ -66,7 +52,7 @@ jobs:
           body: |
             ${{ steps.Changelog.outputs.changelog }}
           draft: false
-          prerelease: ${{ steps.release_type.outputs.prerelease }}
+          prerelease: false
 
   publish-npm:
     name: Publish to npm
@@ -82,14 +68,8 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build --if-present
-      - name: Get npm tag
-        id: npm_tag
-        run: |
-          RELEASE_VERSION=`cat VERSION`
-          NPM_TAG=$([[ $RELEASE_VERSION == *"-rc"* ]] && echo "next" || echo "latest")
-          echo "::set-output name=tag::$NPM_TAG"
       - name: Publish
-        run: npm publish --tag ${{ steps.npm_tag.outputs.tag }}
+        run: npm publish --tag latest
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
   # publish-gh:

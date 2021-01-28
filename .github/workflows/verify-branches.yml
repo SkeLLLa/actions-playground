@@ -59,12 +59,23 @@ jobs:
       - name: Update version file
         run: npm run version:update
       - name: Commit version changes
+        if: github.ref == "refs/heads/master"
         run: |
           git config --global user.name 'Release Bot'
           git config --global user.email '2273103+SkeLLLa@users.noreply.github.com'
-          RELEASE_VERSION=`cat VERSION`
-          echo "$RELEASE_VERSION"
-          [[ ${{ github.ref }} == "refs/heads/master" ]] && npm run release || npm run release -- --prerelease rc
+          npm run release
+      - name: Commit version changes
+        if: github.ref == "refs/heads/next"
+        run: |
+          git config --global user.name 'Release Bot'
+          git config --global user.email '2273103+SkeLLLa@users.noreply.github.com'
+          npm run release -- --prerelease rc --skip changelog
+        # run: |
+        #   git config --global user.name 'Release Bot'
+        #   git config --global user.email '2273103+SkeLLLa@users.noreply.github.com'
+        #   RELEASE_VERSION=`cat VERSION`
+        #   echo "$RELEASE_VERSION"
+        #   [[ ${{ github.ref }} == "refs/heads/master" ]] && npm run release || npm run release -- --prerelease rc --skip changelog
   # release:
   #   name: Create release
   #   needs: bump-version
