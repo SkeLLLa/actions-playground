@@ -6,3 +6,4 @@ bar
 next test
 feat 1
 fix 2
+chore 3
