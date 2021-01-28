@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/SkeLLLa/actions-playground/compare/v1.8.4...v1.10.0) (2021-01-28)
+
+
+### Features
+
+* **test:** qweqwe BREAKING ([c396d1f](https://github.com/SkeLLLa/actions-playground/commit/c396d1f68d6a7fd0516ab03ad0b8bcfad41e0977))
+* **xxx:** test ([d32f416](https://github.com/SkeLLLa/actions-playground/commit/d32f4160ea05ee4dfc7d8b3c4fe81f95bff78071))
+* feat 1 ([f95d7cf](https://github.com/SkeLLLa/actions-playground/commit/f95d7cf5d3f754cc80a1962c24f269e973110c25))
+* test break ([6105c72](https://github.com/SkeLLLa/actions-playground/commit/6105c72d3a96a87aba1e30b7bcdf5370190f4100))
+
+
+### Bug Fixes
+
+* 2 ([6fecd8d](https://github.com/SkeLLLa/actions-playground/commit/6fecd8de87701ee7ed80dbd8495b6e9ff5927084))
+
+
+### Misc
+
+* bump ([d8c04a6](https://github.com/SkeLLLa/actions-playground/commit/d8c04a6a8c71ef459e7f64629fdc1d15bf851a73))
+* readme ([4dad4ae](https://github.com/SkeLLLa/actions-playground/commit/4dad4ae3973b40a8a6c8452228cd24d4daf464b9))
+
 ### [1.8.4](https://github.com/SkeLLLa/actions-playground/compare/v1.8.3...v1.8.4) (2021-01-28)
 
 ### [1.8.3](https://github.com/SkeLLLa/actions-playground/compare/v1.8.2...v1.8.3) (2021-01-28)
