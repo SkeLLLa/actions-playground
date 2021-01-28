@@ -11,6 +11,7 @@ on:
       - completed
     branches:
       - master
+      - next
 
 name: Create Release
 
