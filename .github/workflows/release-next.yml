@@ -60,6 +60,8 @@ jobs:
     needs: release
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: refs/heads/next
       - uses: actions/setup-node@v1
         with:
           node-version: 14
