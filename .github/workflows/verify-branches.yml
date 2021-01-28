@@ -95,7 +95,7 @@ jobs:
       - name: Get release type
         id: release_type
         run: |
-          RELEASE_VERSION = `cat VERSION`
+          RELEASE_VERSION=`cat VERSION`
           PRERELEASE=$([[ $RELEASE_VERSION == *"-rc"* ]] && echo true || echo false)
           echo "::set-output name=version::$RELEASE_VERSION"
           echo "::set-output name=prerelease::$PRERELEASE"
