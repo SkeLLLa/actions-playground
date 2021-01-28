@@ -4,3 +4,4 @@ test
 foo
 bar
 next test
+feat 1
