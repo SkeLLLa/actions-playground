@@ -69,7 +69,7 @@ jobs:
         run: |
           git config --global user.name 'Release Bot'
           git config --global user.email '2273103+SkeLLLa@users.noreply.github.com'
-          npm run release -- --prerelease rc --skip changelog
+          npm run release -- --prerelease rc --skip.changelog
         # run: |
         #   git config --global user.name 'Release Bot'
         #   git config --global user.email '2273103+SkeLLLa@users.noreply.github.com'
