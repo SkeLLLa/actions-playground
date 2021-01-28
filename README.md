@@ -5,3 +5,4 @@ foo
 bar
 next test
 feat 1
+fix 2
