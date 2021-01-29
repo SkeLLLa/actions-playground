@@ -30,7 +30,7 @@ jobs:
       - name: Get latest changelog
         id: Changelog
         run: |
-          changelog=$(npm run --silent get-changelog -- --skipUnstable | tail -n +2)
+          changelog=$(npm run --silent get-changelog -- --skipUnstable | tail -n +1)
           echo $changelog
           changelog="${changelog//'%'/'%25'}"
           changelog="${changelog//$'\n'/'%0A'}"
