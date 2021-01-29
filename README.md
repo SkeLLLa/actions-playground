@@ -20,3 +20,4 @@ fix a
 feat b
 test 1
 qweqwe
+feat b
