@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/SkeLLLa/actions-playground/compare/v1.10.0-rc.5...v2.0.0) (2021-01-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* **xxx:** breaking
+
+### Features
+
+* **bump:** foobar ([de9bcc0](https://github.com/SkeLLLa/actions-playground/commit/de9bcc01c57d23a007f95a3c7761874152bc4c10))
+* **xxx:** test ([caf2fb8](https://github.com/SkeLLLa/actions-playground/commit/caf2fb8679adc428da52a92ae3cec2379c6a4822))
+
 ## [1.10.0](https://github.com/SkeLLLa/actions-playground/compare/v1.8.4...v1.10.0) (2021-01-28)
 
 
